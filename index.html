@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Primary Meta Tags -->
+    <title>Markdown Pro Editor - Free Online Markdown Editor with Live Preview</title>
+    <meta name="title" content="Markdown Pro Editor - Free Online Markdown Editor with Live Preview">
+    <meta name="description" content="Write and preview Markdown in real-time with our free online editor. Features syntax highlighting, dark mode, spell check, local storage, and export to HTML/MD. No registration required.">
+    <meta name="keywords" content="markdown editor, online markdown, markdown preview, syntax highlight, code editor, dark mode, free markdown, markdown writing, markdown tool, github markdown">
+    <meta name="author" content="Markdown Pro">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="theme-color" content="#5B4DFF">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://markdownpro.com/">
+    <meta property="og:title" content="Markdown Pro Editor - Free Online Markdown Editor">
+    <meta property="og:description" content="Write and preview Markdown in real-time with our free online editor. Features syntax highlighting, dark mode, spell check, and more.">
+    <meta property="og:image" content="https://markdownpro.com/og-image.png">
+    <meta property="og:site_name" content="Markdown Pro">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://markdownpro.com/">
+    <meta name="twitter:title" content="Markdown Pro Editor - Free Online Markdown Editor">
+    <meta name="twitter:description" content="Write and preview Markdown in real-time. Free, fast, and feature-rich editor.">
+    <meta name="twitter:image" content="https://markdownpro.com/twitter-image.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://markdownpro.com/">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="lib/material-icons.css">
+    <link rel="stylesheet" href="lib/base16-light.css">
+    <link rel="stylesheet" href="codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="lib/default.css">
+    <link rel="stylesheet" href="lib/github-markdown.css">
+    <link rel="stylesheet" href="lib/spell-checker.min.css">
+    <link rel="stylesheet" href="lib/sweetalert.css">
+    <link rel="stylesheet" href="index.css">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Markdown Pro Editor",
+        "url": "https://markdownpro.com",
+        "description": "A free online Markdown editor with live preview, syntax highlighting, dark mode, and export capabilities.",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "Real-time Markdown preview",
+            "Syntax highlighting",
+            "Dark mode support",
+            "Spell check",
+            "Local storage",
+            "Export to HTML and Markdown",
+            "Keyboard shortcuts"
+        ],
+        "author": {
+            "@type": "Organization",
+            "name": "Markdown Pro"
+        },
+        "inLanguage": "en"
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Markdown Pro Editor",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "ratingCount": "1250"
+        }
+    }
+    </script>
+</head>
+<body id="toplevel">
+    <!-- Main Application Container -->
+    <main class="app-container" role="main">
+        <!-- Editor Area -->
+        <section id="in" aria-label="Markdown Editor">
+            <form>
+                <textarea id="code" aria-label="Markdown content editor"># Welcome to Markdown Pro
+
+A modern, powerful online Markdown editor with the following features:
+
+## ✨ Core Features
+
+- **Live Preview** - Write on the left, see results on the right in real-time
+- **Syntax Highlighting** - Support for multiple programming languages
+- **Dark Mode** - Eye-friendly dark theme
+- **Spell Check** - Real-time spelling checker
+- **Local Storage** - Save your work in browser storage
+- **Export** - Download as Markdown or HTML files
+
+## 🎯 Keyboard Shortcuts
+
+- `Ctrl/Cmd + B` - Bold text
+- `Ctrl/Cmd + I` - Italic text
+- `Ctrl/Cmd + K` - Inline code
+- `Ctrl/Cmd + L` - Keyboard shortcut tag
+- `Ctrl/Cmd + S` - Save to browser storage
+
+## 🚀 Start Writing
+
+Begin your creative journey now! Your work is auto-saved as you type.</textarea>
+            </form>
+        </section>
+        
+        <!-- Preview Area -->
+        <section id="out" class="markdown-body" aria-label="Markdown Preview"></section>
+        
+        <!-- Resizer Handle -->
+        <div class="resizer" id="resizer" aria-label="Resize editor and preview panels" role="separator" tabindex="0"></div>
+    </main>
+    
+    <!-- Download Modal -->
+    <div id="menu" aria-labelledby="menu-title" role="dialog" aria-modal="true">
+        <span id="menu-title">Download File</span>
+        <div id="saveas-markdown" role="button" tabindex="0" aria-label="Download as Markdown">
+            <svg height="64" width="64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g transform="scale(0.0625)">
+                    <path d="M950.154 192H73.846C33.127 192 0 225.12699999999995 0 265.846v492.308C0 798.875 33.127 832 73.846 832h876.308c40.721 0 73.846-33.125 73.846-73.846V265.846C1024 225.12699999999995 990.875 192 950.154 192zM576 703.875L448 704V512l-96 123.077L256 512v192H128V320h128l96 128 96-128 128-0.125V703.875zM767.091 735.875L608 512h96V320h128v192h96L767.091 735.875z" />
+                </g>
+            </svg>
+            <span>Markdown</span>
+        </div>
+        <div id="saveas-html" role="button" tabindex="0" aria-label="Download as HTML">
+            <svg height="64" width="64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <g transform="scale(0.0625) translate(64,0)">
+                    <path d="M608 192l-96 96 224 224L512 736l96 96 288-320L608 192zM288 192L0 512l288 320 96-96L160 512l224-224L288 192z" />
+                </g>
+            </svg>
+            <span>HTML</span>
+        </div>
+        <button id="close-menu" aria-label="Close menu">&times;</button>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar" role="navigation" aria-label="Main navigation">
+        <div id="navcontent">
+            <a id="logo" href="#" title="Markdown Pro Editor">
+                <h1 id="title">
+                    <span class="logo-icon" aria-hidden="true">📝</span>
+                    Markdown Pro
+                </h1>
+            </a>
+            
+            <!-- Left Button Group -->
+            <div class="nav-group left-group">
+                <button id="openbutton" class="navbutton" title="Open local file" onclick="document.getElementById('fileInput').click();" aria-label="Open file">
+                    <i class="material-icons" aria-hidden="true">folder_open</i>
+                    <span class="btn-text">Open</span>
+                </button>
+                <input id="fileInput" type="file" class="hidden" accept=".md,.mdown,.txt,.markdown" aria-label="File input"/>
+                
+                <button id="savebutton" class="navbutton" title="Download file" onclick="showMenu()" aria-label="Download">
+                    <i class="material-icons" aria-hidden="true">download</i>
+                    <span class="btn-text">Download</span>
+                </button>
+                
+                <button id="browsersavebutton" class="navbutton" title="Save to browser storage" onclick="saveInBrowser()" aria-label="Save to browser">
+                    <i class="material-icons" aria-hidden="true">save</i>
+                    <span class="btn-text">Save</span>
+                </button>
+                
+                <button id="sharebutton" class="navbutton" title="Share document" onclick="updateHash()" aria-label="Share">
+                    <i class="material-icons" aria-hidden="true">share</i>
+                    <span class="btn-text">Share</span>
+                </button>
+            </div>
+            
+            <!-- Right Button Group -->
+            <div class="nav-group right-group">
+                <button id="nightbutton" class="navbutton selected" title="Toggle dark mode" onclick="toggleNightMode(this)" aria-label="Toggle dark mode">
+                    <i class="material-icons" aria-hidden="true">dark_mode</i>
+                    <span class="btn-text">Dark</span>
+                </button>
+                
+                <button id="readbutton" class="navbutton" title="Toggle reading mode" onclick="toggleReadMode(this)" aria-label="Toggle reading mode">
+                    <i class="material-icons" aria-hidden="true">visibility</i>
+                    <span class="btn-text">Read</span>
+                </button>
+                
+                <button id="spellbutton" class="navbutton selected" title="Toggle spell check" onclick="toggleSpellCheck(this)" aria-label="Toggle spell check">
+                    <i class="material-icons" aria-hidden="true">spellcheck</i>
+                    <span class="btn-text">Spell</span>
+                </button>
+                
+                <button id="newbutton" class="navbutton hidden" onclick="clearEditor()" aria-label="Clear editor">
+                    <i class="material-icons" aria-hidden="true">refresh</i>
+                    <span class="btn-text">Clear</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Status Bar -->
+    <footer id="statusbar" role="contentinfo">
+        <span class="status-item" id="wordcount">Words: 0</span>
+        <span class="status-item" id="charcount">Characters: 0</span>
+        <span class="status-item" id="linenumber">Lines: 0</span>
+        <span class="status-item" id="save-status">Saved</span>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="lib/markdown-it.js"></script>
+    <script src="lib/markdown-it-footnote.js"></script>
+    <script src="lib/highlight.pack.js"></script>
+    <script src="lib/emojify.js"></script>
+    <script src="codemirror/lib/codemirror.js"></script>
+    <script src="codemirror/overlay.js"></script>
+    <script src="codemirror/xml/xml.js"></script>
+    <script src="codemirror/markdown/markdown.js"></script>
+    <script src="codemirror/gfm/gfm.js"></script>
+    <script src="codemirror/javascript/javascript.js"></script>
+    <script src="codemirror/css/css.js"></script>
+    <script src="codemirror/htmlmixed/htmlmixed.js"></script>
+    <script src="codemirror/lib/util/continuelist.js"></script>
+    <script src="lib/spell-checker.min.js"></script>
+    <script src="lib/rawinflate.js"></script>
+    <script src="lib/rawdeflate.js"></script>
+    <script src="lib/sweetalert.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
